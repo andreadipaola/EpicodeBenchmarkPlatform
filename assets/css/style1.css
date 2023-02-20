@@ -98,7 +98,7 @@ div label {
     margin-left: 5px;
 }
 
-/*#conditions {
+*#conditions {
     width: 15px;
     height: 15px;
     cursor: pointer;
@@ -117,15 +117,4 @@ div label {
  #conditions:checked {
     background-color: currentColor;
     
-}*/
-
-.transparent-checkbox {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: 2px solid white;
-    background-color: transparent;
-    width: 16px;
-    height: 16px;
-    margin: 0;
-    padding: 0;
 }
