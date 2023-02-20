@@ -8,6 +8,7 @@
     --turquoise: #00ffff;
     --purple: #d20094;
     --white: #fff;
+    --black: #000;
 }
 
 body {
@@ -22,6 +23,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+a:link,a:hover,a:active,a:visited {
+    text-decoration: none;
+    color: var(--black);
 }
 
 .container {
@@ -134,6 +140,8 @@ input:checked+label div {
     border: none;
     padding: 15px 50px;
     background-color: var(--turquoise);
-    box-shadow: 0 0 40px 0px var(--turquoise);
 }
 
+.cta:hover {
+    box-shadow: 0 0 20px 2px var(--turquoise);
+}
