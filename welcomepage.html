@@ -11,23 +11,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style1.css">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <div id="container">
-        <header>
-            <div>
-                <img class="logo" src="assets/img/epicode_logo.png" alt="epicode_logo">
-            </div>
-        </header>
-        
+    <div class="container">
+        <div class="logo-box">
+            <img class="logo" src="assets/img/epicode_logo.png" alt="epicode logo">
+        </div>
+
+        <div class="title-box">
             <p class="titolo">Welcome to <span class="grassetto block">your exam</span></p>
-            <h2>Instructions</h2>
-            <p>We don't expect most engineers to know the answers to all of these <br> questions, so dont worry if you're
+        </div>
+
+        <div class="instruction-box">
+            <p>Instructions</p>
+            <p>We don't expect most engineers to know the answers to all of these<br> questions, so dont worry if you're
                 unsure
                 of a few of them.</p>
+        </div>
 
+        <div class="list-box">
             <ul>
                 <li>Each question is <span class="grassetto"> timed </span> and can only be <span class="grassetto">
                         answered once</span>.</li>
@@ -35,15 +40,21 @@
                     </span> </li>
                 <li>This exam will take approx. <span class="grassetto"> 0-5 minutes.</span></li>
             </ul>
-            <div class="footer">
-                <div>
-                    
-                    <label for="conditions"><input type="checkbox" name="conditions" id="conditions" class="transparent-checkbox">I promise to answer myself without help from anyone</label>
-                </div>
+        </div>
 
-                <button class="cta">Proceed</button>
+        <div class="footer-box">
+            <div>
+                <input type="checkbox" name="conditions" id="conditions">
+                <label for="conditions">
+                    <div id="footer2">
+                        <i class="fa fa-check"></i>
+                    </div> I promise to answer myself without help from anyone
+                </label>
             </div>
-        
+
+            <button class="cta">Proceed</button>
+        </div>
+
     </div>
 
 </body>

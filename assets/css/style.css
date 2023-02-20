@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --turquoise: #00ffff;
+    --purple: #d20094;
+    --white: #fff;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--white);
+
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-position: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+}
+
+.grassetto {
+    font-weight: 700;
+
+}
+.logo-box {
+    margin-bottom: 80px;
+}
+
+img {
+    width: 160px;
+}
+
+.block {
+    display: block;
+}
+
+.title-box {
+    margin-bottom: 40px;
+}
+.titolo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 3rem;
+}
+
+.instruction-box {
+    margin-bottom: 50px;
+}
+.instruction-box p:first-child {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    color: #c2128d;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.instruction-box p:nth-child(2) {
+    line-height: 1.2;
+}
+
+.list-box {
+    margin-bottom: 80px;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+ul li {
+    list-style: disc;
+    line-height: 25px
+}
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+
+/*CHECKBOX*/
+input {
+    display: none;
+}
+
+label div {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border: 1px solid #fff;
+    text-align: center;
+    line-height: 20px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+label i {
+    font-size: 16px;
+    opacity: 0;
+}
+
+label:hover div {
+    background: rgba(255, 255, 255, 0.2);
+
+}
+
+input:checked+label i {
+    opacity: 1;
+}
+
+input:checked+label div {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cta {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px 50px;
+    background-color: var(--turquoise);
+    box-shadow: 0 0 40px 0px var(--turquoise);
+}
+
