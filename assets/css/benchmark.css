@@ -44,6 +44,7 @@ header {
     display: flex;
     justify-content: space-between;
 }
+
 h1 {
 
     font-family: 'Outfit', sans-serif;
@@ -108,7 +109,7 @@ div label {
     width: 15px;
     height: 15px;
     cursor: pointer;
-    background:transparent;
+    background: transparent;
     color: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -116,16 +117,30 @@ div label {
     border: 2px solid white;
     position: relative;
     vertical-align: middle;
-       
-    
+
+
 }
 
- #conditions:checked {
+#conditions:checked {
     background-color: currentColor;
-    
+
 }
 
+.opzione{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    padding: 15px 50px;
+    background-color: #23294f;
+    box-shadow: 0 0 40px 0px #23294f;
+    border-radius:50px ;
+    margin :10px;
 
+}
+#opzione{
+    border-image-source: linear-gradient(to top left, );
+}
 
 
 
@@ -147,34 +162,29 @@ div label {
 ############################################################
 */
 
-body {
-    font-family: sans-serif;
-    display: grid;
-    height: 100vh;
-    place-items: center;
-  }
-  
-  .base-timer {
+
+.base-timer {
     position: relative;
-    width: 300px;
-    height: 300px;
-  }
-  
-  .base-timer__svg {
+    width: 150px;
+    height: 150px;
+}
+
+.base-timer__svg {
     transform: scaleX(-1);
-  }
-  
-  .base-timer__circle {
+}
+
+.base-timer__circle {
     fill: none;
     stroke: none;
-  }
-  
-  .base-timer__path-elapsed {
+}
+
+.base-timer__path-elapsed {
     stroke-width: 7px;
-    stroke: grey;
-  }
-  
-  .base-timer__path-remaining {
+    stroke: white;
+    opacity: 0.3;
+}
+
+.base-timer__path-remaining {
     stroke-width: 7px;
     stroke-linecap: round;
     transform: rotate(90deg);
@@ -182,27 +192,27 @@ body {
     transition: 1s linear all;
     fill-rule: nonzero;
     stroke: currentColor;
-  }
-  
-  .base-timer__path-remaining.green {
-    color: rgb(65, 184, 131);
-  }
-  
-  .base-timer__path-remaining.orange {
+}
+
+.base-timer__path-remaining.green {
+    color: #00ffff;
+}
+
+.base-timer__path-remaining.orange {
     color: orange;
-  }
-  
-  .base-timer__path-remaining.red {
-    color: red;
-  }
-  
-  .base-timer__label {
+}
+
+.base-timer__path-remaining.red {
+    color: #d20094;
+}
+
+.base-timer__label {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 48px;
-  }
+}
