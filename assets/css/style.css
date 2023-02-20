@@ -40,10 +40,6 @@ h2 {
     margin:10px 0;
 }
 
-p{
-    padding-right: 10px;
-}
-
 .grassetto {
     font-weight: 700;
     
@@ -56,6 +52,8 @@ img {
 
 ul {
     margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 ul li{
