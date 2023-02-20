@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 :root {
     --turquoise: #00ffff;
@@ -7,47 +12,57 @@
 
 
 body {
+    height: 100vh;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     color: var(--white);
     font-weight: 400;
-}
 
-#container {
-    height: 100vh;
     background-image: url(../img/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 50px 100px 90px; 
     display: flex;
-    flex-direction: column;    /* justify-content: space-between; */
-    }
+    justify-content: center;
+    align-items: center;
+}
+
+.block {
+    display: block;
+}
+
+#container {
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    /* align-items: center; */
+}
 
 h1 {
 
     font-family: 'Outfit', sans-serif;
     font-size: 60px;
     font-weight: 400;
-    margin-top:80px;
+    margin-top: 80px;
     margin-bottom: 45px;
     line-height: 48px;
 }
+
 h2 {
     font-family: 'Outfit', sans-serif;
     font-size: 28px;
     color: #c2128d;
     font-weight: 700;
-    margin:10px 0;
+    margin: 10px 0;
 }
 
 .grassetto {
     font-weight: 700;
-    
+
 }
 
 img {
     width: 160px;
-    margin-bottom: 70px;
 
 }
 
@@ -57,14 +72,15 @@ ul {
     margin-bottom: 50px;
 }
 
-ul li{
+ul li {
     list-style: disc;
-    line-height:25px
+    line-height: 25px
 }
 
 .footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .cta {
@@ -76,4 +92,40 @@ ul li{
     padding: 15px 50px;
     background-color: var(--turquoise);
     box-shadow: 0 0 40px 0px #00ffff;
+}
+
+div label {
+    margin-left: 5px;
+}
+
+/*#conditions {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background:transparent;
+    color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid white;
+    position: relative;
+    vertical-align: middle;
+       
+    
+}
+
+ #conditions:checked {
+    background-color: currentColor;
+    
+}*/
+
+.transparent-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid white;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
 }
