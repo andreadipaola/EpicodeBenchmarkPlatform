@@ -1,99 +1,144 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
 body {
-    height: 100vh;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    color: var(--white);
-    font-weight: 400;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: var(--white);
+  font-weight: 400;
 
-    background-image: url(../img/bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 .block {
-    display: block;
+  display: block;
 }
 
 #container {
-    width: 900px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 40px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
 }
 
-h2 {
-
-    font-family: 'Outfit', sans-serif;
-    font-size: 60px;
-    font-weight: 400;
-    margin-top: 80px;
-    margin-bottom: 45px;
-    line-height: 48px;
-    
+.logo {
+    align-self: flex-start;
+}
+.riga-centrale {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+#risultati {
+  text-align: center;
+  margin-bottom: 40px ;
 }
 
-.sinistra{
-    font-family: 'Outfit', sans-serif;
-    font-size: 28px;
+#risultati p:nth-child(1) {
+  font-family: "Outfit", sans-serif;
+  font-size: 3.75rem;
+  font-weight: 700;
+  margin-top: 80px;
+  margin-bottom: 15px;
+  line-height: 48px;
+}
+
+#risultati p:nth-child(2) {
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+}
+
+.corretti {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+.sbagliati {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 30px
+}
+
+.corretti span:nth-child(1),
+.sbagliati span:nth-child(1) {
+    font-size: 3.4rem;
+    margin-bottom:5px;
+}
+
+.corretti span:nth-child(2),
+.sbagliati span:nth-child(2) {
+    font-size: 3.1rem;
+    margin-bottom: 7px;
+}
+
+.corretti span:nth-child(3),
+.sbagliati span:nth-child(3) {
+    font-size: 1.25rem;
+}
+
+
+.cerchio span:first-child {
     font-weight: 700;
-    margin: 20px ;
-   text-align: left;
+    font-size: 1.25rem;
+    margin-bottom: 5px ;
 }
 
-
-.destra{
-    font-family: 'Outfit', sans-serif;
-    font-size: 28px;
+.cerchio span:nth-child(2) {
     font-weight: 700;
-    margin: 20px ;
-   text-align: right;
-   
-}
-
-
-
-
-.grassetto {
-    font-weight: 700;
-
+    font-size: 1.25rem;
+    margin-bottom: 20px ;
+    color: #01ffff ;  
 }
 
 img {
-    
-    width: 160px;}
+  width: 160px;
+}
 
 .cta {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    text-transform: uppercase;
-    border: none;
-    padding: 15px 10px;
-    background-color: transparent;
-    border: solid 1px white;
-    color: white;
-}
-
-
-.colore{
-    color: turquoise;
-}
-
-.cerchio{
-    border: 5px solid white;
-    border-radius: 100%;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  border: none;
+  padding: 15px 70px;
+  background-color: transparent;
+  border: solid 2px white;
+  color: white;
+  margin: 35px;
 
 }
+
+
+
+.cerchio {
+  border: 50px solid #c2128d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px; 
+  padding: 20px;
+  text-align: center;
+}
+
+.cerchio p:last-child {
+    line-height: 1.4;
+
+}
+
 

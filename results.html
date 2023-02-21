@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results Page</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/results.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/results.css">
-</head>
-
-<body>
+  <body>
     <div id="container">
-        <header>
-            <div>
-                <img class="logo" src="assets/img/epicode_logo.png" alt="epicode_logo">
-            </div>
-        </header>
-            <h2>Results</h2>
-            <p>The summary of your answer:</p>
-      <h3 class="sinistra">Correct <br> <span class="grassetto">66.7%</span></h3>
-      <div class="cerchio">
-    <p >  <span class="grassetto">  Congratulations! </span> <br>
-       <span class="colore"> You passed the exam. </span> <br> <br>
-    Well send you the certificate <br>
-    in few minutes. <br>
-    Check your email (including <br>
-    promotions / spam folder)</p>
+      <div class="logo">
+        <img
+          src="assets/img/epicode_logo.png"
+          alt="epicode_logo"
+        />
       </div>
-      <h3 class="destra">Wrong <br> <span class="grassetto">33.3%%</span></h3>
-      <button class="cta">RATE US</button>
-         
-
-</body>
-
+      <div id="risultati">
+        <p>Results</p>
+        <p>The summary of your answer:</p>
+      </div>
+      <div class="riga-centrale">
+        <div class="corretti">
+          <span>Correct </span>
+          <span>66.7%</span>
+          <span>4/6 questions</span>
+        </div>
+        <div class="cerchio">
+          <span>Congratulations!</span>
+          <span> You passed the exam. </span>
+          <p>
+            We'll send you the certificate in few minutes. Check your email
+            (including promotions / spam folder)
+          </p>
+        </div>
+        <div class="sbagliati">
+            <span>Wrong</span>
+            <span>33.3%</span>
+            <span>2/6 questions</span>
+          </div>
+      </div>
+      <div>
+        <button class="cta">RATE US</button>
+      </div>
+    </div>
+  </body>
 </html>
