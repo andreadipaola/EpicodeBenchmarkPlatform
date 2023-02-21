@@ -67,7 +67,7 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px 50px;
-    margin-bottom: 160px;
+    margin-bottom: 100px;
 }
 
 .footer-box {
@@ -98,7 +98,21 @@ button:focus {
     color: var(--purple);
 }
 
+#bottoneProssimo{
+    display: block;
+    margin-left: auto;
+}
 
+#prossimo{
+    background-color: var(--purple);
+    border-radius: 0%;
+    box-shadow: none;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    padding: 0;
+    margin: 50px;
+}
 
 
 
