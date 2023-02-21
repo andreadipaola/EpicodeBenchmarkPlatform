@@ -39,7 +39,7 @@ body {
 }
 
 .header-box {
-    margin-bottom: 100px;
+    margin-bottom: 70px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -69,7 +69,7 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px 50px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .footer-box {
@@ -113,7 +113,7 @@ button:focus {
     height: 50px;
     text-align: center;
     padding: 0;
-    margin: 50px;
+    margin: 30px;
 }
 
 

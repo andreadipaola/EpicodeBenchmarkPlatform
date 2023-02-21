@@ -104,7 +104,8 @@ let next = document.getElementById('prossimo')
 let target = document.querySelector('.answer-container')
 let bottoneProssimo =document.querySelector('#bottoneProssimo')
 
-
+let timer = document.querySelector("#app");
+next.addEventListener("click",() => timePassed = -1);
 
 let domandeRisposte = []
 
@@ -132,22 +133,45 @@ next.addEventListener('click',()=>{
   target.textContent=''
   targeTitolo.textContent=''
 
-  let bottone = document.createElement('button')
-  bottone.classList.add('risposte')
+  let bottone1 = document.createElement('button')
+  let bottone2 = document.createElement('button')
+  let bottone3 = document.createElement('button')
+  let bottone4 = document.createElement('button')
+
+  bottone1.classList.add('risposte')
+  bottone2.classList.add('risposte')
+  bottone3.classList.add('risposte')
+  bottone4.classList.add('risposte')
+
   let indice= Math.floor(Math.random()*domandeRisposte.length)
 
   for (let risposta of domandeRisposte[indice].risposte) {
+  
     
-    for (let singola of risposta) {
-      
-      bottone.textContent = singola 
-      target.append(bottone)
-      
+   for(let i = 0; i < risposta.length; i++) {
+   
+    bottone1.textContent=risposta[0]
+    bottone2.textContent=risposta[1]
+    bottone3.textContent=risposta[2]
+    bottone4.textContent=risposta[3]
+    
+    if(risposta.length == 2){
+      target.appendChild(bottone1)
+      target.appendChild(bottone2)
+    }else{
+      target.appendChild(bottone1)
+      target.appendChild(bottone2)
+      target.appendChild(bottone3)
+      target.appendChild(bottone4)
     }
+    
+   }
+    console.log(bottone1)
+    
      let titolo = document.createElement('p')
-  titolo.classList.add('titolo')
-  titolo.textContent = domandeRisposte[indice].domanda
-  targeTitolo.appendChild(titolo)
+    titolo.classList.add('titolo')
+    titolo.textContent = domandeRisposte[indice].domanda
+    targeTitolo.appendChild(titolo)
 
   }
 
