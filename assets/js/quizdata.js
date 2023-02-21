@@ -144,17 +144,17 @@ next.addEventListener('click',()=>{
       target.append(bottone)
       
     }
-    
+     let titolo = document.createElement('p')
+  titolo.classList.add('titolo')
+  titolo.textContent = domandeRisposte[indice].domanda
+  targeTitolo.appendChild(titolo)
 
   }
 
   domandeRisposte.splice(indice,1)
 
   
-  let titolo = document.createElement('p')
-  titolo.classList.add('titolo')
-  titolo.textContent = domandeRisposte[indice].domanda
-  targeTitolo.appendChild(titolo)
+ 
 })
 }else{
   next.addEventListener('click',()=>{
