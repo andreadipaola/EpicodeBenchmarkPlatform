@@ -102,7 +102,9 @@ const questions = [
 let risposte = document.getElementsByClassName('.risposte')
 let next = document.getElementById('prossimo')
 let target = document.querySelector('.answer-container')
-//questions[i].incorrect_answers
+let bottoneProssimo =document.querySelector('#bottoneProssimo')
+
+
 
 let domandeRisposte = []
 
@@ -142,18 +144,25 @@ next.addEventListener('click',()=>{
       target.append(bottone)
       
     }
-    
+     let titolo = document.createElement('p')
+  titolo.classList.add('titolo')
+  titolo.textContent = domandeRisposte[indice].domanda
+  targeTitolo.appendChild(titolo)
 
   }
 
   domandeRisposte.splice(indice,1)
 
   
-  let titolo = document.createElement('p')
-  titolo.classList.add('titolo')
-  titolo.textContent = domandeRisposte[indice].domanda
-  targeTitolo.appendChild(titolo)
+ 
 })
 }else{
-  next.addEventListener('click')
+  next.addEventListener('click',()=>{
+      bottoneProssimo.textContent=''
+      let a = document.createElement('a')
+      a.classList.add('prossimo')
+      let attributi = document.createAttribute('href')
+      attributi.value="results.html"
+      a.setAttributeNode(attributi)
+  })
 }
