@@ -1,10 +1,12 @@
 let stelle= document.getElementsByClassName('star')
 
-function stelle (){ for (let stella of stelle) {
-    stelle.addEventListener(()=>{
-        stella.classList.add('feedbackStars')
-    })
+let stelleSelezionate =[]
+
+ for (let stella of stelle) {
+    stella.addEventListener('click',function () {
+            stelleSelezionate += stella.classList.add('feedbackStars')
+        })
 }
-}
+
 
 console.log(stelle)
