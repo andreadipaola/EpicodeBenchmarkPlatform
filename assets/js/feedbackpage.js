@@ -1,10 +1,19 @@
-let stelle= document.getElementsByClassName('star')
+let allStars= document.querySelectorAll('.star')
 
-function stelle (){ for (let stella of stelle) {
-    stelle.addEventListener(()=>{
-        stella.classList.add('feedbackStars')
-    })
-}
-}
+allStars.forEach((star,i)=>{
+    star.onclick = function(){
+        let current_star_level = i + 1;
+        
+        allStars.forEach((star,j)=>{
+            if(current_star_level >= j+1){
+                star.classList.add('feedbackStars')  
+            }else{
+                star.classList.remove('feedbackStars')
+            }
+        })
+    }
+})
 
-console.log(stelle)
+
+  
+
