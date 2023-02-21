@@ -126,7 +126,7 @@ for (let opzioni  of questions) {
 }
 
 
-if(domandeRisposte !== undefined){
+if(domandeRisposte !== [] ){
 next.addEventListener('click',()=>{
   let targeTitolo = document.querySelector('.title-box')
   target.textContent=''
@@ -157,12 +157,14 @@ next.addEventListener('click',()=>{
  
 })
 }else{
-  next.addEventListener('click',()=>{
+
+  
+  /*next.addEventListener('click',()=>{
       bottoneProssimo.textContent=''
       let a = document.createElement('a')
       a.classList.add('prossimo')
       let attributi = document.createAttribute('href')
       attributi.value="results.html"
       a.setAttributeNode(attributi)
-  })
+  })*/
 }
