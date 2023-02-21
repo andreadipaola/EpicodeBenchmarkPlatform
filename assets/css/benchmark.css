@@ -9,6 +9,7 @@
     --purple: #d20094;
     --white: #fff;
     --purple2: #900080;
+    --violet: #999ece;
 }
 
 body {
@@ -131,51 +132,62 @@ button:focus {
 ############################################################
 */
 
-
-/* .base-timer {
+.base-timer {
     position: relative;
     width: 150px;
     height: 150px;
-}
-
-.base-timer__svg {
+  }
+  
+  .base-timer__svg {
     transform: scaleX(-1);
-}
-
-.base-timer__circle {
+  }
+  
+  .base-timer__circle {
     fill: none;
     stroke: none;
-}
-
-.base-timer__path-elapsed {
-    stroke-width: 7px;
-    stroke: white;
-    opacity: 0.3;
-}
-
-.base-timer__path-remaining {
-    stroke-width: 7px;
+  }
+  
+  .base-timer__path-elapsed {
+    stroke-width: 10px;
+    stroke: rgba(255, 255, 255, 0.5);
+  }
+  
+  .base-timer__path-remaining {
+    stroke-width: 10px;
     stroke-linecap: round;
     transform: rotate(90deg);
     transform-origin: center;
     transition: 1s linear all;
     fill-rule: nonzero;
     stroke: currentColor;
-}
+  }
+  
+  .text-timer1 {
+    font-size: 10px;
+    position: absolute;
+    left: 50px;
+    top: 40px;
+  }
+  .text-timer{
+      font-size: 10px;
+      position: absolute;
+      left: 46px;
+      bottom: 38px;
+    }
 
-.base-timer__path-remaining.green {
-    color: #00ffff;
-}
-
-.base-timer__path-remaining.orange {
-    color: orange;
-}
-
-.base-timer__path-remaining.red {
-    color: #d20094;
-}
-
-.base-timer__label {
+  .base-timer__path-remaining.green {
+    color: var(--turquoise);
+  }
+  
+  .base-timer__path-remaining.orange {
+    color: var(--violet);
+  }
+  
+  .base-timer__path-remaining.red {
+    color: var(--purple);
+  }
+  
+  .base-timer__label {
     position: absolute;
     width: 150px;
     height: 150px;
@@ -183,13 +195,6 @@ button:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 48px;
-} */
-
-
-
-/* 
-############################################################
-                        TIMER v 2 CSS
-############################################################
-*/
+    font-size: 50px;
+  }
+  

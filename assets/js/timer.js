@@ -36,8 +36,8 @@ document.getElementById("app").innerHTML = `
         d="
           M 50, 50
           m -45, 0
-          a 45,45 0 1,0 -180,0
-          a 45,45 0 1,0 +180,0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
         "
       ></path>
     </g>
