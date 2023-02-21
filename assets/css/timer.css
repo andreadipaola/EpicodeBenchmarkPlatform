@@ -9,6 +9,7 @@
 body {
     background-image: url("../img/bg.jpg");
     font-family: 'Inter', sans-serif;
+    /* font-family: 'Outfit', sans-serif; */
     font-size: 16px;
     color: var(--white);
 }
@@ -43,10 +44,19 @@ body {
     stroke: currentColor;
   }
   
-  .text-timer {
+  .text-timer1 {
     font-size: 10px;
-    display: block;
+    position: absolute;
+    left: 50px;
+    top: 40px;
   }
+  .text-timer{
+      font-size: 10px;
+      position: absolute;
+      left: 46px;
+      bottom: 38px;
+    }
+
   .base-timer__path-remaining.green {
     color: var(--turquoise);
   }

@@ -18,7 +18,7 @@ const COLOR_CODES = {
     }
 };
 
-const TIME_LIMIT = 60;
+const TIME_LIMIT = 20;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -36,14 +36,14 @@ document.getElementById("app").innerHTML = `
         d="
           M 50, 50
           m -45, 0
-          a 45,45 0 1,0 90,0
-          a 45,45 0 1,0 -90,0
+          a 45,45 0 1,0 -180,0
+          a 45,45 0 1,0 +180,0
         "
       ></path>
     </g>
   </svg>
   
-  <span class="text-timer">SECONDS</span>
+  <span class="text-timer1">SECONDS</span>
   <span id="base-timer-label" class="base-timer__label">${formatTime(
     timeLeft
 )}</span>
@@ -74,13 +74,10 @@ function startTimer() {
 }
 
 function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-
+    let seconds = time;
     if (seconds < 10) {
         seconds = `0${seconds}`;
     }
-
     return `${seconds}`;
 }
 
