@@ -102,7 +102,9 @@ const questions = [
 let risposte = document.getElementsByClassName('.risposte')
 let next = document.getElementById('prossimo')
 let target = document.querySelector('.answer-container')
-//questions[i].incorrect_answers
+let bottoneProssimo =document.querySelector('#bottoneProssimo')
+
+
 
 let domandeRisposte = []
 
@@ -155,5 +157,12 @@ next.addEventListener('click',()=>{
   targeTitolo.appendChild(titolo)
 })
 }else{
-  next.addEventListener('click')
+  next.addEventListener('click',()=>{
+      bottoneProssimo.textContent=''
+      let a = document.createElement('a')
+      a.classList.add('prossimo')
+      let attributi = document.createAttribute('href')
+      attributi.value="results.html"
+      a.setAttributeNode(attributi)
+  })
 }
