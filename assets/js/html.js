@@ -1,4 +1,7 @@
-/*const questions = [
+import createElement from "./Funzioni.js"
+//import createFullElement from "./Funzioni.js"
+
+const questions = [
     {
       category: "Science: Computers",
       type: "multiple",
@@ -99,10 +102,57 @@
   ];
 
 
-let risposte = document.getElementsByClassName('.answer-container')
-let next = document.querySelector('.prossimo')
+
+
+
+
+let proceed = document.getElementById('proceed')
+let container = document.querySelector('.container')
+
+//############################################################################################################
+//                                         benchmarkpage
+//############################################################################################################
+
+let logo = document.createElement('img', 'logo')
+logo.src = 'assets/img/epicode_logo.png'
+logo.classList = 'logo'
+let logoBox = createElement('div', 'bheader-box')
+let app = createElement('div')
+app.id = 'app'
+
+
+let titleBox = createElement('div', 'title-box');
+let answerContainer = createElement('div', 'answer-container');
+let buttonContainer = createElement('div', 'bottoneProssimo');
+let bottone = createElement('button', 'prossimo');
+bottone.textContent = 'NEXT';
+let footerBox = createElement('div', 'footer-box');
+let pFooter = createElement('p', 'pfooter');
+let rosato = createElement('span', 'rosato');
+pFooter.textContent = 'question 1';
+rosato.textContent = '\\10';
+
+
+proceed.addEventListener('click', () => {
+    container.textContent = ''
+
+    container.appendChild(logoBox).appendChild(logo)
+    logoBox.appendChild(app)
+
+    container.appendChild(titleBox);
+    container.appendChild(answerContainer);
+    container.appendChild(buttonContainer).appendChild(bottone)
+    container.appendChild(footerBox).appendChild(pFooter).appendChild(rosato);
+
+    
+})
+
+
+
+/*let risposte = document.getElementsByClassName('.risposte')
+// let next = document.querySelector('.prossimo')
 let target = document.querySelector('.answer-container')
-let bottoneProssimo =document.querySelector('.bottoneProssimo')
+//let bottoneProssimo =document.querySelector('.bottoneProssimo')
 
 let timer = document.querySelector("#app");
 next.addEventListener("click",() => timePassed = -1);
@@ -127,10 +177,9 @@ for (let opzioni  of questions) {
 }
 
 
-
   
-  next.addEventListener('click',()=>{
-  let targeTitolo = document.querySelector('.title-box')
+  bottone.addEventListener('click',()=>{
+  let targeTitolo = titleBox
   target.textContent=''
   targeTitolo.textContent=''
 
@@ -169,10 +218,11 @@ for (let opzioni  of questions) {
    }
     console.log(bottone1)
     
-     let titolo = document.createElement('p')
+    let titolo = document.createElement('p')
     titolo.classList.add('titolo')
     titolo.textContent = domandeRisposte[indice].domanda
     targeTitolo.appendChild(titolo)
+    
 
   }
 
@@ -180,4 +230,73 @@ for (let opzioni  of questions) {
 
   
  
-})*/
+})
+//}else{
+
+  
+  /*next.addEventListener('click',()=>{
+      bottoneProssimo.textContent=''
+      let a = document.createElement('a')
+      a.classList.add('prossimo')
+      let attributi = document.createAttribute('href')
+      attributi.value="results.html"
+      a.setAttributeNode(attributi)
+  })*/
+//}
+
+
+//##########################################################################################################
+//                                            resultspage
+//##########################################################################################################
+
+let paragraph = createElement('p');
+let spanS = createElement('span');
+
+
+bottone.addEventListener('click',()=>{
+    container.textContent=''
+    let logoBox1 = createElement('div', 'bheader-box')
+    container.appendChild(logoBox1).appendChild(logo)
+    
+
+    
+    
+
+    //risultati
+
+    let titoloRis = document.createElement('div')
+    titoloRis.id = 'risultati'
+    container.appendChild(titoloRis)
+    let p1 = document.createElement('p')
+    p1.textContent = 'Results'
+    titoloRis.appendChild(p1)
+    let p2 = document.createElement('p')
+    p2.textContent ='The summary of your answer'
+    titoloRis.appendChild(p2)
+
+
+    //riga centrale
+        
+    let rigaCentrale = createElement('div','riga-centrale');
+    let corretti = createElement('div', 'corretti');
+    let cerchio = createElement('div', 'cerchio');
+    let sbagliati = createElement('div','sbagliati');
+    container.appendChild(rigaCentrale).appendChild(corretti);
+    container.appendChild(rigaCentrale).appendChild(cerchio);
+    container.appendChild(rigaCentrale).appendChild(sbagliati);
+    
+
+
+    
+
+
+    //rate us
+    let rateuss = createElement('div', 'rateuss');
+    let cta = createElement('button', 'cta');
+    cta.textContent= 'RATE US'
+    
+
+
+
+})
+

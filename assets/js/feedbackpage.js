@@ -14,6 +14,3 @@ allStars.forEach((star,i)=>{
     }
 })
 
-
-  
-
