@@ -11,9 +11,12 @@ body {
   color: var(--white);
   font-weight: 400;
 
+  background-attachment: fixed;
   background-image: url(../img/bg.jpg);
-  background-size: cover;
+  background-position: 50%;
   background-repeat: no-repeat;
+  background-size: cover;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,16 +36,18 @@ body {
 }
 
 .logo {
-    align-self: flex-start;
+  align-self: flex-start;
 }
+
 .riga-centrale {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
 }
+
 #risultati {
   text-align: center;
-  margin-bottom: 40px ;
+  margin-bottom: 40px;
 }
 
 #risultati p:nth-child(1) {
@@ -74,33 +79,33 @@ body {
 
 .corretti span:nth-child(1),
 .sbagliati span:nth-child(1) {
-    font-size: 3.4rem;
-    margin-bottom:5px;
+  font-size: 3.4rem;
+  margin-bottom: 5px;
 }
 
 .corretti span:nth-child(2),
 .sbagliati span:nth-child(2) {
-    font-size: 3.1rem;
-    margin-bottom: 7px;
+  font-size: 3.1rem;
+  margin-bottom: 7px;
 }
 
 .corretti span:nth-child(3),
 .sbagliati span:nth-child(3) {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 
 .cerchio span:first-child {
-    font-weight: 700;
-    font-size: 1.25rem;
-    margin-bottom: 5px ;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 5px;
 }
 
 .cerchio span:nth-child(2) {
-    font-weight: 700;
-    font-size: 1.25rem;
-    margin-bottom: 20px ;
-    color: #01ffff ;  
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  color: #01ffff;
 }
 
 img {
@@ -131,14 +136,12 @@ img {
   align-items: center;
   border-radius: 50%;
   width: 400px;
-  height: 400px; 
+  height: 400px;
   padding: 20px;
   text-align: center;
 }
 
 .cerchio p:last-child {
-    line-height: 1.4;
+  line-height: 1.4;
 
 }
-
-
