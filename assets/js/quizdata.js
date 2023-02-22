@@ -111,8 +111,8 @@ let domandeRisposte = []
 
 for (let opzioni  of questions) {
  let option=[]
- let titoli= opzioni.question
- 
+ let titoli= opzioni.question;
+ let vero = opzioni.correct_answer
  
   let sbagliate = opzioni.incorrect_answers
   sbagliate.push(opzioni.correct_answer)
@@ -121,12 +121,14 @@ for (let opzioni  of questions) {
 
 
   domandeRisposte.push({
+    riispostaVera : vero,
     domanda : titoli ,
-    risposte : option
+    risposte : option,
   })
 }
 
-
+let ind = 0
+let punteggio =0
 if(domandeRisposte !== [] ){
 next.addEventListener('click',()=>{
   let targeTitolo = document.querySelector('.title-box')
@@ -177,10 +179,18 @@ next.addEventListener('click',()=>{
 
   domandeRisposte.splice(indice,1)
 
+  ind +=1
+    
+    let p =document.querySelector('.domanda')
+    p.textContent= `question ${ind}  `
+    cont.appendChild(p)
   
- 
 })
-}else{
+
+next.addEventListener('click',()=>{
+ 
+
+})}else{
 
   
   /*next.addEventListener('click',()=>{
@@ -192,3 +202,4 @@ next.addEventListener('click',()=>{
       a.setAttributeNode(attributi)
   })*/
 }
+
