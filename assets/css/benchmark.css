@@ -39,11 +39,11 @@ body {
 }
 
 .bheader-box {
-    margin-bottom: 70px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
     /*width: 100%;*/
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     /*max-*/height: 100%;
 }
 
