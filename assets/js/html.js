@@ -1,4 +1,5 @@
 import createElement from "./Funzioni.js"
+
 //import createFullElement from "./Funzioni.js"
 
 const questions = [
@@ -413,19 +414,26 @@ cta.addEventListener('click',()=>{
 //                                          feedbackpage stars
 //##############################################################################################################
 
-let allStars= document.querySelectorAll('.star')
+//  
 
-allStars.forEach((star,i)=>{
-    star.onclick = function(){
+
+let allStars = document.querySelectorAll('.star')
+
+
+allStars.forEach((star, i) => {
+    star.onclick = function () {
         let current_star_level = i + 1;
-        
-        allStars.forEach((star,j)=>{
-            if(current_star_level >= j+1){
-                star.classList.add('feedbackStars')  
-            }else{
+
+        allStars.forEach((star, j) => {
+            if (current_star_level >= j + 1) {
+              star.classList.ad('feedbackStars')
+                console.log("mi hai selezionato");
+            } else {
                 star.classList.remove('feedbackStars')
+                
             }
         })
     }
 })
+
 
