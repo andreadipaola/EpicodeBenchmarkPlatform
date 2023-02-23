@@ -1,4 +1,4 @@
-const questions = [
+/*const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
@@ -178,4 +178,4 @@ next.addEventListener('click', () => {
 
 
 
-})
+})*/

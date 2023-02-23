@@ -1,4 +1,4 @@
-import createElement from "./Funzioni.js"
+/*import createElement from "./Funzioni.js"
 
 //import createFullElement from "./Funzioni.js"
 
@@ -249,7 +249,7 @@ for (let opzioni  of questions) {
 //##########################################################################################################
 //                                            resultspage
 //##########################################################################################################
-
+/*
 let cta = createElement('button', 'rate');
 
 bottone.addEventListener('click', () => {
@@ -342,11 +342,11 @@ bottone.addEventListener('click', () => {
 
 
 })
-
+*/
 //###############################################################################################################
 //                                          feedbackpage
 //###############################################################################################################
-
+/*
 cta.addEventListener('click',()=>{
   container.textContent= ' '
 
@@ -435,5 +435,5 @@ allStars.forEach((star, i) => {
         })
     }
 })
-
+*/
 

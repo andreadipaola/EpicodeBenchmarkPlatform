@@ -1,5 +1,4 @@
-
-
+/*
 // Credit: Mateusz Rybczonec
 
 const FULL_DASH_ARRAY = 283;
@@ -118,3 +117,4 @@ function setCircleDasharray() {
         .setAttribute("stroke-dasharray", circleDasharray);
 }
 
+*/
