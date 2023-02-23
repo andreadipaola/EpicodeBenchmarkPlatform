@@ -270,8 +270,17 @@ proceed.addEventListener('click', () => {
 
             domande()
 
-            next.addEventListener('click', () => { domande() })
+            if (domandeRisposte.length > 0) {
+                next.addEventListener('click', () => { domande() })
+                console.log(domandeRisposte.length)
+               
+            } else {
+                
+            }
+
+            
             function domande() {
+
                 let targeTitolo = document.querySelector('.title-box')
                 target.textContent = ''
                 targeTitolo.textContent = ''
@@ -312,7 +321,7 @@ proceed.addEventListener('click', () => {
                         }
 
                     }
-                    console.log(bottone1)
+                    
 
                     let titolo = document.createElement('p')
                     titolo.textContent = domandeRisposte[indice].domanda
@@ -329,30 +338,45 @@ proceed.addEventListener('click', () => {
                 questionNum.textContent = `QUESTION ${index}`
             }
 
-            if (index == 10) {
-                next.addEventListener('click', () => {
-                    container.textContent = ''
-                    container.style.display = 'none'
-                })
-
-                /*fetch('results_page.html')
-                .then(res => res.text())
-                .then(res => {
-        
+         let test = document.querySelector('.prova')
+            test.addEventListener('click',()=>{
+                targetDoc.textContent = ''
                 
+                
+                fetch('feedback_page.html')
+                .then(res1 => res1.text())
+                .then(res1 => {
                     let divOspite = document.createElement('div');
-                    divOspite.innerHTML = res
-                    
-                    targetDoc.append(divOspite);
-                    
-                })})*/
-            }
+                    divOspite.innerHTML = res1
+
+                     targetDoc.append(divOspite);
+
+                     let allStars = document.querySelectorAll('.star')
+
+
+                    allStars.forEach((star, i) => {
+                        star.onclick = function () {
+                            let current_star_level = i + 1;
+
+                            allStars.forEach((star, j) => {
+                                if (current_star_level >= j + 1) {
+                                    star.classList.add('feedbackStars')
+                                } else {
+                                    star.classList.remove('feedbackStars')
+                                    
+                                }
+        })
+    }
+})
+                
+                  })
+           })
 
         })
 })
 
 
-
+ 
 
 
 
