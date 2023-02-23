@@ -329,7 +329,7 @@ proceed.addEventListener('click', () => {
                 questionNum.textContent = `QUESTION ${index}`
             }
 
-            if (index == 9) {
+            if (index == 10) {
                 next.addEventListener('click', () => {
                     container.textContent = ''
                     container.style.display = 'none'
