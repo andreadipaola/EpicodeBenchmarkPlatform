@@ -3,6 +3,8 @@ let targetDoc = document.querySelector('#target');
 let container = document.querySelector('.container');
 let index = 0
 let next = document.querySelector('.next-question-btn')
+let risultato = 0
+
 
 proceed.addEventListener('click', () => {
     container.textContent = ''
@@ -79,6 +81,7 @@ proceed.addEventListener('click', () => {
             function onTimesUp() {
                 // clearInterval(timerInterval);
                 domande();
+                
             }
 
             function startTimer() {
@@ -254,7 +257,7 @@ proceed.addEventListener('click', () => {
             for (let opzioni of questions) {
                 let option = []
                 let titoli = opzioni.question
-
+                let vere = opzioni.correct_answer
 
                 let sbagliate = opzioni.incorrect_answers
                 sbagliate.push(opzioni.correct_answer)
@@ -264,21 +267,97 @@ proceed.addEventListener('click', () => {
 
                 domandeRisposte.push({
                     domanda: titoli,
-                    risposte: option
+                    risposte: option,
+                    corrette: vere
                 })
             }
 
             domande()
 
-            if (domandeRisposte.length > 0) {
-                next.addEventListener('click', () => { domande() })
-                console.log(domandeRisposte.length)
-               
-            } else {
-                
-            }
 
-            
+
+            next.addEventListener('click', () => {
+                domande()
+
+                if (index == 10) {//mi riporta alla pagina dei risultati
+                    
+
+                    let nuovoTasto = document.querySelector('.next-question-box')
+                    nuovoTasto.textContent = ''
+                    let confermaT = document.createElement('button')
+                    confermaT.classList.add('cta')
+                    confermaT.textContent = 'conferma'
+                    nuovoTasto.appendChild(confermaT)
+                    //############################################################################################################
+                    //                                           results page
+                    //############################################################################################################               
+
+                    confermaT.addEventListener('click', () => {
+                        targetDoc.textContent = ''
+
+
+                        fetch('results_page.html')
+                            .then(res2 => res2.text())
+                            .then(res2 => {
+                                let divOspite = document.createElement('div');
+                                divOspite.innerHTML = res2
+
+                                targetDoc.append(divOspite);
+
+
+                                //  inserire javascript dei risultati
+
+
+                                //###########################################################################################################
+                                //                                      feedback page
+                                //###########################################################################################################                        
+                                let rateUs = document.querySelector('.rate-btn')
+                                rateUs.addEventListener('click', () => {
+
+                                    targetDoc.textContent = ''
+
+
+                                    fetch('feedback_page.html')
+                                        .then(res1 => res1.text())
+                                        .then(res1 => {
+                                            let divOspite = document.createElement('div');
+                                            divOspite.innerHTML = res1
+
+                                            targetDoc.append(divOspite);
+
+                                            let allStars = document.querySelectorAll('.star')
+
+
+                                            allStars.forEach((star, i) => {
+                                                star.onclick = function () {
+                                                    let current_star_level = i + 1;
+
+                                                    allStars.forEach((star, j) => {
+                                                        if (current_star_level >= j + 1) {
+                                                            star.classList.add('feedbackStars')
+                                                        } else {
+                                                            star.classList.remove('feedbackStars')
+
+                                                        }
+                                                    })
+                                                }
+                                            })
+
+                                        })
+
+                                })
+
+                            })
+                    })
+
+                }
+
+            })
+
+
+            //###############################################################################################################
+            //                                              funzione domande
+            //###############################################################################################################
             function domande() {
 
                 let targeTitolo = document.querySelector('.title-box')
@@ -286,42 +365,35 @@ proceed.addEventListener('click', () => {
                 targeTitolo.textContent = ''
 
                 timePassed = -1
-                // timer.classList.add("time-back-transition");
-
-                let bottone1 = document.createElement('button')
-                let bottone2 = document.createElement('button')
-                let bottone3 = document.createElement('button')
-                let bottone4 = document.createElement('button')
-
-                bottone1.classList.add('answer-btn')
-                bottone2.classList.add('answer-btn')
-                bottone3.classList.add('answer-btn')
-                bottone4.classList.add('answer-btn')
 
                 let indice = Math.floor(Math.random() * domandeRisposte.length)
+                    
+                
+                
 
+                
                 for (let risposta of domandeRisposte[indice].risposte) {
+                    
+                    for (let text of risposta) {
+                        let bottone = document.createElement('button')
+                        bottone.classList.add('answer-btn')
+                        bottone.textContent = text
+                        target.appendChild(bottone)
 
+                        
 
-                    for (let i = 0; i < risposta.length; i++) {
-
-                        bottone1.textContent = risposta[0]
-                        bottone2.textContent = risposta[1]
-                        bottone3.textContent = risposta[2]
-                        bottone4.textContent = risposta[3]
-
-                        if (risposta.length == 2) {
-                            target.appendChild(bottone1)
-                            target.appendChild(bottone2)
-                        } else {
-                            target.appendChild(bottone1)
-                            target.appendChild(bottone2)
-                            target.appendChild(bottone3)
-                            target.appendChild(bottone4)
-                        }
-
+                        bottone.addEventListener('click', () => {
+                             bottone.classList.add('clicked-answer')
+                               if(domandeRisposte[indice].corrette == text ){
+                                    risultato += 1
+                               } else{
+                                risultato += 0
+                               }
+                         })
+                         
                     }
                     
+
 
                     let titolo = document.createElement('p')
                     titolo.textContent = domandeRisposte[indice].domanda
@@ -330,7 +402,24 @@ proceed.addEventListener('click', () => {
 
                 }
 
-                domandeRisposte.splice(indice, 1)
+               /* bottone.addEventListener('click', ()=> {
+
+                    let risposta = bottone.textContent;
+                    let corretta = domandeRisposte[indice].corrette === risposta;
+
+                    if (corretta){
+                        risultato +=1;
+                    }
+
+                    
+                });*/
+
+
+
+
+
+
+               domandeRisposte.splice(indice, 1)
 
 
                 index += 1
@@ -338,89 +427,8 @@ proceed.addEventListener('click', () => {
                 questionNum.textContent = `QUESTION ${index}`
             }
 
-         let test = document.querySelector('.prova')
-            test.addEventListener('click',()=>{
-                targetDoc.textContent = ''
-                
-                
-                fetch('feedback_page.html')
-                .then(res1 => res1.text())
-                .then(res1 => {
-                    let divOspite = document.createElement('div');
-                    divOspite.innerHTML = res1
 
-                     targetDoc.append(divOspite);
-
-                     let allStars = document.querySelectorAll('.star')
-
-
-                    allStars.forEach((star, i) => {
-                        star.onclick = function () {
-                            let current_star_level = i + 1;
-
-                            allStars.forEach((star, j) => {
-                                if (current_star_level >= j + 1) {
-                                    star.classList.add('feedbackStars')
-                                } else {
-                                    star.classList.remove('feedbackStars')
-                                    
-                                }
-        })
-    }
-})
-                
-                  })
-           })
 
         })
 })
 
-
- 
-
-
-
-/*function newAnswer(answerObj){    
-
-
-fetch('template.html')
-.then(res => res.text())
-.then(res => {
-
-
-
-//questo div serve a convertire la stringa html in oggetto html
-let divOspite = document.createElement('div');//creo un elemento ospite
-divOspite.innerHTML = res
-
-let html = divOspite.querySelector('.slide')//ricevo oggetto html
-
-console.log(divOspite)
-
-target.innerHTML = '';
-console.log(html)
-
-//seleziono gli elementi
-let titleDOM = html.querySelector('.title')
-let answersDOM = html.querySelector('.answers')
-
-
-//inserisco contenuto
-titleDOM.textContent = answerObj.title
-
-for(let risp of answerObj.risposte){
-
-    let optionClone = html.querySelector('.answers .option').cloneNode()
-    optionClone.textContent = risp;
-
-    answersDOM.append(optionClone);
-
-}
-
-html.querySelector('.answers .option').remove()//rimuovo la prima option
-
-target.append(html)
-
-})
-
-}*/

@@ -264,6 +264,12 @@ label:hover div {
   /*background: linear-gradient(180deg, rgba(210, 0, 148, 1) 0%, rgba(144, 0, 128, 1) 30%);*/
 }
 
+.clicked-answer:focus {
+  background-color:rgb(210, 0, 148) ;
+}
+
+
+
 .counter-box {
   display: flex;
 }
@@ -463,8 +469,24 @@ label:hover div {
 
 /* 
 ######################
-# RESULT PAGE STYLES #
+# CIRCLE PAGE STYLES #
 ######################
+*/
+
+
+
+
+
+
+
+
+
+
+
+/* 
+########################
+# FEEDBACK PAGE STYLES #
+########################
 */
 
 .stars-container {
@@ -497,4 +519,13 @@ label:hover div {
   padding-left: 35px;
   margin-top: 40px;
   margin-bottom: 60px;
+}
+
+/* 
+###############
+# TEST STYLES #
+###############
+*/
+.fake-button {
+  
 }
