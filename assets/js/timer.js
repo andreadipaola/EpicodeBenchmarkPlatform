@@ -1,3 +1,5 @@
+
+
 // Credit: Mateusz Rybczonec
 
 const FULL_DASH_ARRAY = 283;
@@ -18,13 +20,13 @@ const COLOR_CODES = {
     }
 };
 
-const TIME_LIMIT = 40;
+const TIME_LIMIT = 20;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.info.color;
 
-document.getElementById("app").innerText = `
+document.getElementById("app").innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
@@ -42,12 +44,12 @@ document.getElementById("app").innerText = `
       ></path>
     </g>
   </svg>
-  
-  <span class="text-timer1">SECONDS</span>
+    <span class="text-timer1">SECONDS</span>
   <span id="base-timer-label" class="base-timer__label">${formatTime(
     timeLeft
 )}</span>
 <span class="text-timer">REMAINING</span>  
+
 </div>
 `;
 
@@ -75,9 +77,11 @@ function startTimer() {
 
 function formatTime(time) {
     let seconds = time;
+
     if (seconds < 10) {
         seconds = `0${seconds}`;
     }
+
     return `${seconds}`;
 }
 
@@ -113,3 +117,4 @@ function setCircleDasharray() {
         .getElementById("base-timer-path-remaining")
         .setAttribute("stroke-dasharray", circleDasharray);
 }
+
