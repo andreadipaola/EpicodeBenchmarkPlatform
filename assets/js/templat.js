@@ -307,7 +307,7 @@ proceed.addEventListener('click', () => {
 
                                 //  inserire javascript dei risultati
 
-                                let correctAnswers = 2;
+                                let correctAnswers = 4;
                                 let totalQuestions = 10;
                                 let percentage = Math.round(correctAnswers / totalQuestions * 100);
 
@@ -365,7 +365,7 @@ proceed.addEventListener('click', () => {
                                 let messageDiv = document.createElement('div');
                                 messageDiv.classList.add('message');
                                 messageDiv.textContent = message;
-                                container.appendChild(messageDiv);
+                                container1.appendChild(messageDiv);
 
 
                                 //  calcolo percentuale
