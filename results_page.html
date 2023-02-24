@@ -1,22 +1,24 @@
 <div class="container container--center">
 
-  <div class="header-box">
-    <img class="logo-img" src="assets/img/epicode_logo.png" alt="epicode_logo" />
-  </div>
-  <!--risultati-->
-  <div class="title-box">
-    <span class="title">Results</span>
-    <p class="subtitle">The summary of your answer:</p>
-  </div>
-  <!--riga-centrale-->
-  <div class="central-row">
-    <!--corretti-->
-    <div class="right">
-      <span>Correct </span>
-      <span>66.7%</span>
-      <span>4/6 questions</span>
-    </div>
-    <!--cerchio-->
+      <div class="header-box">
+        <img class="logo-img"
+          src="assets/img/epicode_logo.png"
+          alt="epicode_logo"/>
+      </div>
+<!--risultati-->
+      <div class="title-box">
+        <span class="title">Results</span>
+        <p class="subtitle">The summary of your answer:</p>
+      </div>
+<!--riga-centrale-->
+      <div class="central-row">
+      <!--corretti-->  
+        <div class="right">
+          <span>Correct </span>
+          <span id="giuste"></span>
+          <span id="numgiuste"></span>
+        </div>
+        <!--cerchio-->
 
     <div class="circle">
       <canvas id="myChart"></canvas>
@@ -30,16 +32,16 @@
             (including promotions / spam folder)
           </p>
         </div>-->
-    <!--sbagliati-->
-    <div class="wrong">
-      <span>Wrong</span>
-      <span>33.3%</span>
-      <span>2/6 questions</span>
-    </div>
-  </div>
-  <!--rate us-->
-  <div class="rate-box">
-    <button class="rate-btn">RATE US</button>
-  </div>
+        <!--sbagliati-->
+        <div class="wrong">
+            <span>Wrong</span>
+            <span id="sbagliate"></span>
+            <span id="numsbagliate"></span>
+          </div>
+      </div>
+<!--rate us-->
+      <div class="rate-box">
+        <button class="rate-btn">RATE US</button>
+      </div>
 
 </div>
