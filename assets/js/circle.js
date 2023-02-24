@@ -1,4 +1,3 @@
-
 // const input = document.querySelector('input');
 // input.addEventListener('change', function() {
 //   let value = parseInt(this.value) || 0;
