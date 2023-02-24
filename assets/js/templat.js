@@ -361,7 +361,7 @@ proceed.addEventListener('click', () => {
                                     message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
                                 }
 
-                                let container = document.querySelector('.container');
+                                let container1 = document.querySelector('.circle');
                                 let messageDiv = document.createElement('div');
                                 messageDiv.classList.add('message');
                                 messageDiv.textContent = message;
