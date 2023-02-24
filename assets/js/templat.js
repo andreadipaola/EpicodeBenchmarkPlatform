@@ -361,11 +361,11 @@ proceed.addEventListener('click', () => {
                                 message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
                                 }
 
-                                let container = document.querySelector('.container');
+                                let container1 = document.querySelector('.container1');
                                 let messageDiv = document.createElement('div');
                                 messageDiv.classList.add('message');
                                 messageDiv.textContent = message;
-                                container.appendChild(messageDiv);
+                                container1.appendChild(messageDiv);
 
                                 //###########################################################################################################
                                 //                                      feedback page
