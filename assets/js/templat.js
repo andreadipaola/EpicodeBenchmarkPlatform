@@ -367,6 +367,12 @@ proceed.addEventListener('click', () => {
                                 messageDiv.textContent = message;
                                 container1.appendChild(messageDiv);
 
+
+                                //  calcolo percentuale
+
+
+                                let percentualeGiusto =document.querySelector('#giuste')
+                                let percentualeSbagliate =document.querySelector('#sbagliate')
                                 //###########################################################################################################
                                 //                                      feedback page
                                 //###########################################################################################################                        
