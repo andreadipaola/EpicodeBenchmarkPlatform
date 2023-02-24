@@ -415,6 +415,12 @@ label:hover div {
   font-size: 1.25rem;
 }
 
+.circle {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
 /* .circle {
   border: 50px solid #c2128d;
   display: flex;
@@ -427,7 +433,7 @@ label:hover div {
   padding: 20px;
   text-align: center;
   margin: 0 30px;
-}
+}*/
 
 .circle span:first-child {
   font-weight: 700;
@@ -523,15 +529,6 @@ label:hover div {
 # TEST STYLES #
 ###############
 */
-.fake-button {
-  
-}
-
-.container1 {
-  width: 400px;
-  height: 400px;
-  position: relative;
-}
 
 .container canvas {
   position: absolute;
