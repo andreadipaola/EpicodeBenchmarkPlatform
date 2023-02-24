@@ -369,7 +369,7 @@ proceed.addEventListener('click', () => {
                                 let messageDiv = document.createElement('div');
                                 messageDiv.classList.add('message');
                                 messageDiv.textContent = message;
-                                container.appendChild(messageDiv);
+                                container1.appendChild(messageDiv);
 
 
                                 //  calcolo percentuale
