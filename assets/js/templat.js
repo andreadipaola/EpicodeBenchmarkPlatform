@@ -5,6 +5,7 @@ let index = 0
 let next = document.querySelector('.next-question-btn')
 let risultato = 0
 let pros = 0
+let avanzamento =0
 
 proceed.addEventListener('click', () => {
     container.textContent = ''
@@ -510,34 +511,9 @@ proceed.addEventListener('click', () => {
                     
                 }
 
-
-
-                
-
-                
-
-                /* bottone.addEventListener('click', ()=> {
- 
-                     let risposta = bottone.textContent;
-                     let corretta = domandeRisposte[indice].corrette === risposta;
- 
-                     if (corretta){
-                         risultato +=1;
-                     }
- 
-                     
-                 });*/
-
-
-
-
-
-
-
-
-
+                 avanzamento += 1
                  let questionNum = document.querySelector('#numDoma')
-                 questionNum.textContent = `QUESTION ${index+1}`
+                 questionNum.textContent = `QUESTION ${avanzamento}`
                  pros += 1
             }
 
