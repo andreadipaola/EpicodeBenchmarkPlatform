@@ -34,7 +34,7 @@ let myChart = new Chart(ctx, {
     data: {
         labels: ['Correct Answers', 'Incorrect Answers'],
         datasets: [{
-            label: '% Correct',
+            label: ['% Correct','% Incorrect'],
             data: [percentage, 100 - percentage],
             backgroundColor: ['#00ffff', '#d20094']
         }]

@@ -307,7 +307,7 @@ proceed.addEventListener('click', () => {
 
                                 //  inserire javascript dei risultati
 
-                                let correctAnswers = 8;
+                                let correctAnswers = 2;
                                 let totalQuestions = 10;
                                 let percentage = Math.round(correctAnswers / totalQuestions * 100);
 
@@ -317,7 +317,7 @@ proceed.addEventListener('click', () => {
                                     data: {
                                         labels: ['Correct Answers', 'Incorrect Answers'],
                                         datasets: [{
-                                            label: '% Correct',
+                                            label: '% Correct',                                          
                                             data: [percentage, 100 - percentage],
                                             backgroundColor: ['#00ffff', '#d20094']
                                         }]
@@ -356,7 +356,7 @@ proceed.addEventListener('click', () => {
 
                                 let message = '';
                                 if (percentage >= 70) {
-                                    message = `<span>Congratulations!</span><span>You passed the exam.</span> <p>I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).</p>`;
+                                    message = 'Congratulations!You passed the exam. I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).';
                                 } else {
                                     message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
                                 }
@@ -371,8 +371,8 @@ proceed.addEventListener('click', () => {
                                 //  calcolo percentuale
 
 
-                                let percentualeGiusto =document.querySelector('#giuste')
-                                let percentualeSbagliate =document.querySelector('#sbagliate')
+                                let percentualeGiusto = document.querySelector('#giuste')
+                                let percentualeSbagliate = document.querySelector('#sbagliate')
                                 //###########################################################################################################
                                 //                                      feedback page
                                 //###########################################################################################################                        
