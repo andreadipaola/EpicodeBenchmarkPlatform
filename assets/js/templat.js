@@ -81,7 +81,7 @@ proceed.addEventListener('click', () => {
             function onTimesUp() {
                 // clearInterval(timerInterval);
                 domande();
-                
+
             }
 
             function startTimer() {
@@ -280,7 +280,7 @@ proceed.addEventListener('click', () => {
                 domande()
 
                 if (index == 10) {//mi riporta alla pagina dei risultati
-                    
+
 
                     let nuovoTasto = document.querySelector('.next-question-box')
                     nuovoTasto.textContent = ''
@@ -307,7 +307,7 @@ proceed.addEventListener('click', () => {
 
                                 //  inserire javascript dei risultati
 
-                                                                let correctAnswers = 8;
+                                let correctAnswers = 8;
                                 let totalQuestions = 10;
                                 let percentage = Math.round(correctAnswers / totalQuestions * 100);
 
@@ -341,7 +341,7 @@ proceed.addEventListener('click', () => {
                                         },
                                         plugins: {
                                             datalabels: {
-                                                formatter: function(value, context) {
+                                                formatter: function (value, context) {
                                                     return context.chart.data.labels[context.dataIndex] + '\n' + value + '%';
                                                 },
                                                 color: '#fff',
@@ -356,16 +356,16 @@ proceed.addEventListener('click', () => {
 
                                 let message = '';
                                 if (percentage >= 70) {
-                                message = 'Congratulations! You passed the exam. I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).';
+                                    message = `<span>Congratulations!</span><span>You passed the exam.</span> <p>I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).</p>`;
                                 } else {
-                                message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
+                                    message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
                                 }
 
-                                let container1 = document.querySelector('.container1');
+                                let container = document.querySelector('.container');
                                 let messageDiv = document.createElement('div');
                                 messageDiv.classList.add('message');
                                 messageDiv.textContent = message;
-                                container1.appendChild(messageDiv);
+                                container.appendChild(messageDiv);
 
                                 //###########################################################################################################
                                 //                                      feedback page
@@ -426,32 +426,32 @@ proceed.addEventListener('click', () => {
                 timePassed = -1
 
                 let indice = Math.floor(Math.random() * domandeRisposte.length)
-                    
-                
-                
 
-                
+
+
+
+
                 for (let risposta of domandeRisposte[indice].risposte) {
-                    
+
                     for (let text of risposta) {
                         let bottone = document.createElement('button')
                         bottone.classList.add('answer-btn')
                         bottone.textContent = text
                         target.appendChild(bottone)
 
-                        
+
 
                         bottone.addEventListener('click', () => {
-                             bottone.classList.add('clicked-answer')
-                               if(domandeRisposte[indice].corrette == text ){
-                                    risultato += 1
-                               } else{
+                            bottone.classList.add('clicked-answer')
+                            if (domandeRisposte[indice].corrette == text) {
+                                risultato += 1
+                            } else {
                                 risultato += 0
-                               }
-                         })
-                         
+                            }
+                        })
+
                     }
-                    
+
 
 
                     let titolo = document.createElement('p')
@@ -461,24 +461,24 @@ proceed.addEventListener('click', () => {
 
                 }
 
-               /* bottone.addEventListener('click', ()=> {
-
-                    let risposta = bottone.textContent;
-                    let corretta = domandeRisposte[indice].corrette === risposta;
-
-                    if (corretta){
-                        risultato +=1;
-                    }
-
-                    
-                });*/
-
-
+                /* bottone.addEventListener('click', ()=> {
+ 
+                     let risposta = bottone.textContent;
+                     let corretta = domandeRisposte[indice].corrette === risposta;
+ 
+                     if (corretta){
+                         risultato +=1;
+                     }
+ 
+                     
+                 });*/
 
 
 
 
-               domandeRisposte.splice(indice, 1)
+
+
+                domandeRisposte.splice(indice, 1)
 
 
                 index += 1
