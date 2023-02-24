@@ -260,7 +260,7 @@ label:hover div {
 
 .answer-btn:hover {
   box-shadow: -1px -3px 5px 2px linear-gradient(180deg, rgba(210, 0, 148, 1) 0%, rgba(144, 0, 128, 1) 50%);
-  
+  background-color: rgb(210, 0, 148);
   /*background: linear-gradient(180deg, rgba(210, 0, 148, 1) 0%, rgba(144, 0, 128, 1) 30%);*/
 }
 .clicked-answer:focus{
