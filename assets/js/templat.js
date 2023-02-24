@@ -307,7 +307,7 @@ console.log(risultato)
 
                                 //  inserire javascript dei risultati
 
-                                let correctAnswers = risultato;
+                                let correctAnswers = 2;
                                 let totalQuestions = 10;
                                 let percentage = Math.round(correctAnswers / totalQuestions * 100);
 
