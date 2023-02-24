@@ -436,22 +436,25 @@ label:hover div {
   margin: 0 30px;
 }*/
 
-.circle span:first-child {
+ .messageDiv span:nth-child(2){
   font-weight: 700;
   font-size: 1rem;
   margin-bottom: 5px;
+  display: block;
 }
 
-.circle span:nth-child(2) {
+ .messageDiv span:first-child{
   font-weight: 700;
   font-size: 1rem;
   margin-bottom: 20px;
   color: #01ffff;
 }
 
-.circle p {
-  line-height: 1.4;
-  font-size: 0.8rem;
+.messageDiv p {
+  line-height: 1.1;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 5px;
 
 }
 
@@ -488,7 +491,7 @@ label:hover div {
   align-items: center;
 }
 
-.message {
+.messageDiv {
   position: absolute;
   top: 50%;
   left: 50%;

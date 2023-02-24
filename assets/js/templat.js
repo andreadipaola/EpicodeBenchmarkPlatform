@@ -4,7 +4,7 @@ let container = document.querySelector('.container');
 let index = 0
 let next = document.querySelector('.next-question-btn')
 let risultato = 0
-
+let pros = 0
 
 proceed.addEventListener('click', () => {
     container.textContent = ''
@@ -253,7 +253,7 @@ proceed.addEventListener('click', () => {
             let next = document.querySelector('.next-question-btn')
 
             let domandeRisposte = []
-
+            
             for (let opzioni of questions) {
                 let option = []
                 let titoli = opzioni.question
@@ -261,7 +261,7 @@ proceed.addEventListener('click', () => {
 
                 let sbagliate = opzioni.incorrect_answers
                 sbagliate.push(opzioni.correct_answer)
-                option.push(sbagliate)
+                option.push(...sbagliate)
 
 
 
@@ -270,16 +270,31 @@ proceed.addEventListener('click', () => {
                     risposte: option,
                     corrette: vere
                 })
+
             }
 
+
+            function shuffle(arr){
+                let tempArr = []
+                let ndomande = domandeRisposte.length;
+                for(let i = 0; i < ndomande; i++){
+                    let rand = Math.floor(Math.random() * domandeRisposte.length);
+                    tempArr.push(domandeRisposte[rand])
+                    domandeRisposte.splice(rand, 1);
+                }
+    
+                return tempArr;
+            }
+
+            domandeRisposte = shuffle(domandeRisposte);
             domande()
 
 
 
             next.addEventListener('click', () => {
                 domande()
-console.log(risultato)
-                if (index == 10) {//mi riporta alla pagina dei risultati
+                console.log(risultato)
+                if (pros == 10) {//mi riporta alla pagina dei risultati
 
 
                     let nuovoTasto = document.querySelector('.next-question-box')
@@ -307,7 +322,7 @@ console.log(risultato)
 
                                 //  inserire javascript dei risultati
 
-                                let correctAnswers = 7;
+                                let correctAnswers = 1;
                                 let totalQuestions = 10;
                                 let percentage = Math.round(correctAnswers / totalQuestions * 100);
 
@@ -356,18 +371,42 @@ console.log(risultato)
                                 });
 
                                 let message = '';
+                                let message1 = '';
+                                let message2 = '';
+                                
+                                
+
+
                                 if (percentage >= 40) {
-                                    message = 'You passed the exam. I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).';
+                                    message = 'Congratulations!';
+                                    message1 = 'You passed the exam.';
+                                    message2 = ' I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).';
                                 } else {
-                                    message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
+                                    
+                                    message2 = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
                                 }
+
+                                let span1=document.createElement('span')
+                                span1.textContent=message
+                                span1.classList.add('message');
+                                let span2=document.createElement('span')
+                                span2.textContent= message1
+                                span2.classList.add('message');
+                                let paragrafo=document.createElement('p')
+                                paragrafo.textContent =message2
+                                paragrafo.classList.add('message');
+
 
                                 let container1 = document.querySelector('.circle');
                                 let messageDiv = document.createElement('div');
-                                messageDiv.classList.add('message');
-                                messageDiv.textContent = message;
+                                messageDiv.classList.add('messageDiv');
+
+                                //messageDiv.textContent = message;
                                 container1.appendChild(messageDiv);
 
+                                messageDiv.appendChild(span1)
+                                messageDiv.appendChild(span2)
+                                messageDiv.appendChild(paragrafo)
 
                                 //  calcolo percentuale
                                 let percentuale = ((correctAnswers / 10) * 100).toFixed(0)
@@ -427,13 +466,16 @@ console.log(risultato)
                     })
 
                 }
-
+                index += 1
             })
 
 
             //###############################################################################################################
             //                                              funzione domande
             //###############################################################################################################
+
+            
+
             function domande() {
 
                 let targeTitolo = document.querySelector('.title-box')
@@ -442,41 +484,37 @@ console.log(risultato)
 
                 timePassed = -1
 
-                let indice = Math.floor(Math.random() * domandeRisposte.length)
+                let titolo = document.createElement('p')
+                titolo.textContent = domandeRisposte[index].domanda
+                titolo.classList.add('question-title');
+                targeTitolo.appendChild(titolo)
 
-
-
-
-
-                for (let risposta of domandeRisposte[indice].risposte) {
-
-                    for (let text of risposta) {
+                for (let risposta of domandeRisposte[index].risposte) {
+                       
                         let bottone = document.createElement('button')
                         bottone.classList.add('answer-btn')
-                        bottone.textContent = text
+                        bottone.textContent = risposta
                         target.appendChild(bottone)
-
-
-
+                        bottone.setAttribute('data-indice-domanda',index);
+                        
+                        
+                        
                         bottone.addEventListener('click', () => {
                             bottone.classList.add('clicked-answer')
-                            if (domandeRisposte[indice].corrette == text) {
+                            let indiceDomanda = bottone.getAttribute('data-indice-domanda');
+                            if (domandeRisposte[indiceDomanda].corrette == risposta) {
                                 risultato += 1
-                            } else {
-                                risultato += 0
                             }
                         })
-
-                    }
-
-
-
-                    let titolo = document.createElement('p')
-                    titolo.textContent = domandeRisposte[indice].domanda
-                    titolo.classList.add('question-title');
-                    targeTitolo.appendChild(titolo)
-
+                        
+                    
                 }
+
+
+
+                
+
+                
 
                 /* bottone.addEventListener('click', ()=> {
  
@@ -495,12 +533,12 @@ console.log(risultato)
 
 
 
-                domandeRisposte.splice(indice, 1)
 
 
-                index += 1
-                let questionNum = document.querySelector('#numDoma')
-                questionNum.textContent = `QUESTION ${index}`
+
+                 let questionNum = document.querySelector('#numDoma')
+                 questionNum.textContent = `QUESTION ${index+1}`
+                 pros += 1
             }
 
 
