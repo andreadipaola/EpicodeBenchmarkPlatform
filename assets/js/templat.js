@@ -278,7 +278,7 @@ proceed.addEventListener('click', () => {
 
             next.addEventListener('click', () => {
                 domande()
-
+console.log(risultato)
                 if (index == 10) {//mi riporta alla pagina dei risultati
 
 
@@ -307,7 +307,7 @@ proceed.addEventListener('click', () => {
 
                                 //  inserire javascript dei risultati
 
-                                let correctAnswers = 4;
+                                let correctAnswers = risultato;
                                 let totalQuestions = 10;
                                 let percentage = Math.round(correctAnswers / totalQuestions * 100);
 
@@ -356,13 +356,14 @@ proceed.addEventListener('click', () => {
 
                                 let message = '';
                                 if (percentage >= 40) {
-                                    message = 'Congratulations! You passed the exam. I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).';
-                                    console.log(message);
-
+                                    message = 'You passed the exam. I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).';
                                 } else {
-                                    message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
-                                    console.log(message);
+                                    let messageDiv = document.querySelector('.div');
+                                    let message1 = document.createElement('span');
+                                    message1.innerHTML = `<span>Oh no! Unfortunately, you did not pass the exam. Better luck next time.</span>`;
+                                    messageDiv.appendChild(message1)
 
+                                    // message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
                                 }
 
                                 let container1 = document.querySelector('.circle');
