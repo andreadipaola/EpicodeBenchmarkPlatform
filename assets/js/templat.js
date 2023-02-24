@@ -322,7 +322,7 @@ proceed.addEventListener('click', () => {
 
                                 //  inserire javascript dei risultati
 
-                                let correctAnswers = 1;
+                                let correctAnswers = risultato;
                                 let totalQuestions = 10;
                                 let percentage = Math.round(correctAnswers / totalQuestions * 100);
 
