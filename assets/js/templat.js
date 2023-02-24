@@ -307,7 +307,7 @@ proceed.addEventListener('click', () => {
 
                                 //  inserire javascript dei risultati
 
-                                let correctAnswers = 2;
+                                let correctAnswers = 4;
                                 let totalQuestions = 10;
                                 let percentage = Math.round(correctAnswers / totalQuestions * 100);
 
@@ -317,7 +317,7 @@ proceed.addEventListener('click', () => {
                                     data: {
                                         labels: ['Correct Answers', 'Incorrect Answers'],
                                         datasets: [{
-                                            label: '% Correct',                                          
+                                            label: '% Correct',
                                             data: [percentage, 100 - percentage],
                                             backgroundColor: ['#00ffff', '#d20094']
                                         }]
@@ -355,10 +355,14 @@ proceed.addEventListener('click', () => {
                                 });
 
                                 let message = '';
-                                if (percentage >= 70) {
-                                    message = 'Congratulations!You passed the exam. I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).';
+                                if (percentage >= 40) {
+                                    message = 'Congratulations! You passed the exam. I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).';
+                                    console.log(message);
+
                                 } else {
                                     message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
+                                    console.log(message);
+
                                 }
 
                                 let container1 = document.querySelector('.circle');
@@ -369,20 +373,20 @@ proceed.addEventListener('click', () => {
 
 
                                 //  calcolo percentuale
-                                  let percentuale = ((correctAnswers/10) * 100).toFixed(0)  
-                                let err = 100-percentuale  
-                                
-                                let percentualeGiusto =document.querySelector('#giuste')
-                                percentualeGiusto.textContent=`${percentuale}%`
-                                let percentualeSbagliate =document.querySelector('#sbagliate')
-                                percentualeSbagliate.textContent=`${err}%`
-                                // numero giuste
-                                let incorrectAnswers= 10-correctAnswers
+                                let percentuale = ((correctAnswers / 10) * 100).toFixed(0)
+                                let err = 100 - percentuale
 
-                                let numDGiuste=document.querySelector('#numgiuste')
-                                let numDSbagliate= document.querySelector('#numsbagliate')
-                                numDGiuste.textContent=`${correctAnswers}/10 questions`
-                                numDSbagliate.textContent=`${incorrectAnswers}/10 questions`
+                                let percentualeGiusto = document.querySelector('#giuste')
+                                percentualeGiusto.textContent = `${percentuale}%`
+                                let percentualeSbagliate = document.querySelector('#sbagliate')
+                                percentualeSbagliate.textContent = `${err}%`
+                                // numero giuste
+                                let incorrectAnswers = 10 - correctAnswers
+
+                                let numDGiuste = document.querySelector('#numgiuste')
+                                let numDSbagliate = document.querySelector('#numsbagliate')
+                                numDGiuste.textContent = `${correctAnswers}/10 questions`
+                                numDSbagliate.textContent = `${incorrectAnswers}/10 questions`
                                 //###########################################################################################################
                                 //                                      feedback page
                                 //###########################################################################################################                        
