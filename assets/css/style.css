@@ -415,7 +415,7 @@ label:hover div {
   font-size: 1.25rem;
 }
 
-/*.circle {
+/* .circle {
   border: 50px solid #c2128d;
   display: flex;
   flex-direction: column;
@@ -427,7 +427,7 @@ label:hover div {
   padding: 20px;
   text-align: center;
   margin: 0 30px;
-}*/
+}
 
 .circle span:first-child {
   font-weight: 700;
@@ -527,7 +527,7 @@ label:hover div {
   
 }
 
-.circle {
+.container1 {
   width: 400px;
   height: 400px;
   position: relative;
