@@ -358,12 +358,7 @@ console.log(risultato)
                                 if (percentage >= 40) {
                                     message = 'You passed the exam. I will send you the certificate in a few minutes. Please check your email (including promotions and spam folder).';
                                 } else {
-                                    let messageDiv = document.querySelector('.div');
-                                    let message1 = document.createElement('span');
-                                    message1.innerHTML = `<span>Oh no! Unfortunately, you did not pass the exam. Better luck next time.</span>`;
-                                    messageDiv.appendChild(message1)
-
-                                    // message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
+                                    message = 'Oh no! Unfortunately, you did not pass the exam. Better luck next time.';
                                 }
 
                                 let container1 = document.querySelector('.circle');
