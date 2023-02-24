@@ -369,10 +369,20 @@ proceed.addEventListener('click', () => {
 
 
                                 //  calcolo percentuale
-
-
+                                  let percentuale = ((correctAnswers/10) * 100).toFixed(0)  
+                                let err = 100-percentuale  
+                                
                                 let percentualeGiusto =document.querySelector('#giuste')
+                                percentualeGiusto.textContent=`${percentuale}%`
                                 let percentualeSbagliate =document.querySelector('#sbagliate')
+                                percentualeSbagliate.textContent=`${err}%`
+                                // numero giuste
+                                let incorrectAnswers= 10-correctAnswers
+
+                                let numDGiuste=document.querySelector('#numgiuste')
+                                let numDSbagliate= document.querySelector('#numsbagliate')
+                                numDGiuste.textContent=`${correctAnswers}/10 questions`
+                                numDSbagliate.textContent=`${incorrectAnswers}/10 questions`
                                 //###########################################################################################################
                                 //                                      feedback page
                                 //###########################################################################################################                        

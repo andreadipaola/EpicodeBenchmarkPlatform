@@ -24,7 +24,7 @@
 
 // Definizione dei dati del grafico
 
-let correctAnswers = 8;
+/*let correctAnswers = 8;
 let totalQuestions = 10;
 let percentage = Math.round(correctAnswers / totalQuestions * 100);
 
@@ -82,4 +82,4 @@ let container = document.querySelector('.container');
 let messageDiv = document.createElement('div');
 messageDiv.classList.add('message');
 messageDiv.textContent = message;
-container.appendChild(messageDiv);
+container.appendChild(messageDiv);*/
